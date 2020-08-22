@@ -162,7 +162,7 @@ for i in range (0,b-1):
     program to get a list as an input
     and to sort the list using both bubble sort and selection sort algo
     and to check wheter a number is present in the list or not,if yes then to determine its position
-''' 
+
 def ssort(nums):
     for i in range (len(nums)-1):
         minpos = i
@@ -183,6 +183,7 @@ def bsort(nums):
                 nums[j+1]=temp
 
 pos = 0
+ps = 0
 def bsch(nums,n):
     l = 0
     u = len(nums)-1
@@ -197,6 +198,17 @@ def bsch(nums,n):
             else:
                 l = mid + 1
           
+def lsch(nums,n):
+    i = 0
+    u = len(nums)-1
+    while i < u:
+        if nums[i] == n:
+            globals()['ps']  = i
+            return True
+        i += 1
+        
+
+
 
 b = int(input("Enter the length of list "))
  
@@ -210,16 +222,107 @@ for i in range (b):
 
 print(nums)
 
+nums.sort()
+print(nums)
+
+nums.reverse
+print(nums)
+
+t = int(input("enter the number to be searched "))
+
+if lsch(nums,t):
+    ps = ps+1
+else:
+    print("Not found")
+
+
 ssort(nums)
 print("via Selection sort",nums)
 
 bsort(nums)
 print("via Bubble sort   ",nums)
 
-n = int(input("enter the number to be searched "))
 
-if bsch(nums,n):
-    print("found at position",pos+1)
+if bsch(nums,t):
+    pos += 1
 else:
     print("Not found")
+
+print("through Linear Search, found at position",ps)
+print("through Binary Search, found at position",pos)
+
+''' 
+'''
+ # fibonacci series using function
+def r(n):
+    while n == 1:
+        return 0
+        break
+    while n == 2:
+        return 1
+        break
+    return r(n-1) + r(n-2)
+
+
+
+def F(n):
+    if a ==1:
+        print(0)
+    elif a ==2:
+        print(0)
+        print(1)
+    else:
+        print(0)
+        print(1)
+        i = 3
+        while i <= n:
+            print(r(i)) 
+            i += 1
+            
+
+
+
+a = int(input(" enter the number of required terms in th series "))
+
+F(a)
+
+
+# fibonacci regular method
+a = 0
+b = 1
+n = int(input("enter the number of terms "))
+if n == 1:
+    print(a)
+elif n == 2:
+    print(a)
+    print(b)
+else:
+    print(a)
+    print(b)
+    for i in range (3,n+1):
+        c= a+b
+        a=b 
+        b=c
+        print(c)
+
+#Armstrong number
+
+n = int(input("enter a 3 digit number "))
+
+a = n % 10
+b = n // 10
+c = b % 10
+d = b // 10
+
+p = a**3
+q = c**3
+r = d**3
+
+s = p+q+r
+
+if s == n:
+    print("The number is armstrong")
+else:
+    print("The number is not armstrong")
+'''
 

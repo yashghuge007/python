@@ -63,7 +63,7 @@ if bsch(nums,n):
 else:
     print("Not found")
 
-
+input()
 
 
 
